@@ -1,0 +1,154 @@
+/**************************************************************************************************
+* 	Name:			Tabs CSS
+* 	Author:			Luke Guppy
+* 	Date Created:	29/05/2013
+**************************************************************************************************/
+/**************************************************************************************************
+*	Reset browser defaults & HTML5 display-role reset for older browsers (http://meyerweb.com/eric/tools/css/reset/)
+**************************************************************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+body {
+    line-height: 1;
+    background-color: #e9e6e1;
+    color: #414042;
+    font: 62.5%/1.5 Georgia, serif;
+	padding: 40px;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.6em;
+    margin-bottom: 14px;
+}
+h3 {
+    font-size: 1.5em;
+}
+p {
+    font-size: 1.4em;
+    color: #414042;
+    margin-bottom: 10px;
+}
+a {
+    color: #1f2250;
+}
+a:hover {
+	color: #080814;
+}
+/*-------- Instructions styles ---------*/
+#instructions {
+width: 500px;
+margin: 0 0 50px 100px
+}
+#instructions  ul {
+    padding-left: 30px;
+	list-style: disc;
+}
+
+#instructions li {
+	font-size: 1.2em;
+	margin-bottom: 1em;
+}
+/*------------ Carousel styles --------------*/
+.carouselWrap {
+	width: 500px;
+	height: 520px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+	margin: 0 20px;
+	border-radius: 6px;
+}
+.next,
+.prev {
+	display: block;
+	padding: 5px 12px;
+	background-color: #414042;
+	float: left;
+	color: #e9e6e1;
+	text-decoration: none;
+	font-size: 1.4em;
+	margin-top: 200px;
+	border-radius: 6px;
+}
+.next:hover,
+.prev:hover {
+	background-color: #8f8f95;
+	color: #151515;
+}
+#carousel h2 {
+	font-size: 1.8em;
+}
+#carousel {
+	margin-bottom: 50px;
+	float: left
+}
+#carousel ul {
+	position: absolute;
+	width: 1500px;
+}
+#carousel ul li {
+	background-color: #414042;
+	width: 460px;
+	height: 380px;
+	display: block;
+	padding: 20px;
+	float: left;
+}
+#carousel ul li img {
+	margin-bottom: 20px;
+}
+#carousel ul li p,
+#carousel ul li h2 {
+	color: #e9e6e1;
+}
+
+
+
+#carousel1 h2 {
+	font-size: 1.8em;
+}
+#carousel1 {
+	margin-bottom: 50px;
+	float: left
+}
+#carousel1 ul {
+	position: absolute;
+	width: 1500px;
+}
+#carousel1 ul li {
+	background-color: #414042;
+	width: 460px;
+	height: 380px;
+	display: block;
+	padding: 20px;
+	float: left;
+}
+#carousel1 ul li img {
+	margin-bottom: 20px;
+}
+#carousel1 ul li p,
+#carousel1 ul li h2 {
+	color: #e9e6e1;
+}

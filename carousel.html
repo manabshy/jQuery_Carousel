@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
+<head>
+<title>jCarousel Examples</title>
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<!--
+  jQuery library
+-->
+<script type="text/javascript" src="jquery-1.10.0.min.js""></script>
+<!--
+  jCarousel library
+-->
+<script type="text/javascript" src="jquery.jcarousel.min.js"></script>
+<!--
+  jCarousel skin stylesheet
+-->
+<link rel="stylesheet" type="text/css" href="carousel.css" />
+
+<style type="text/css">
+
+
+</style>
+
+<script type="text/javascript">
+/**
+ * We use the initCallback callback
+ * to assign functionality to the controls
+ */
+ 
+var carousel_mb = function(className) {
+  this.className = className;
+
+
+  this.carouselElements = goog.dom.getElementsByClass(this.className);
+}
+
+carousel_mb.prototype.animate = function() {
+  //animation methods here
+}
+ var mycarousel_initCallback = function(carousel) {
+   jQuery('#mycarousel a').bind('click', function() {
+        carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+        return false;
+    });
+
+    jQuery('.jcarousel-scroll select').bind('change', function() {
+        carousel.options.scroll = jQuery.jcarousel.intval(this.options[this.selectedIndex].value);
+        return false;
+    });
+
+    jQuery('#mycarousel-next').bind('click', function() {
+        carousel.next();
+        return false;
+    });
+
+    jQuery('#mycarousel-prev').bind('click', function() {
+        carousel.prev();
+        return false;
+    });
+};
+
+var mycarousel1_initCallback = function(carousel1) {
+    jQuery('#mycarousel1 a').bind('click', function() {
+        carousel1.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+        return false;
+    });
+
+    jQuery('.jcarousel-scroll select').bind('change', function() {
+        carousel1.options.scroll = jQuery.jcarousel.intval(this.options[this.selectedIndex].value);
+        return false;
+    });
+
+    jQuery('#mycarousel1-next').bind('click', function() {
+        carousel1.next();
+        return false;
+    });
+
+    jQuery('#mycarousel1-prev').bind('click', function() {
+        carousel1.prev();
+        return false;
+    });
+};
+
+// Ride the carousel...
+jQuery(document).ready(function() {
+    jQuery("#mycarousel").jcarousel({
+        scroll: 1,
+        initCallback: mycarousel_initCallback,
+        // This tells jCarousel NOT to autobuild prev/next buttons
+        buttonNextHTML: null,
+        buttonPrevHTML: null
+    });
+    
+    
+    jQuery("#mycarousel1").jcarousel({
+        scroll: 1,
+        initCallback: mycarousel1_initCallback,
+        // This tells jCarousel NOT to autobuild prev/next buttons
+        buttonNextHTML: null,
+        buttonPrevHTML: null
+    });
+    
+});
+
+</script>
+
+</head>
+<body>
+<section id="instructions">
+	<h1>Build a re-usable carousel plugin</h1>
+	<p>This task is to build an extensible and reusable horizontally sliding carousel controlled by the 'next' and 'previous' buttons. jQuery is already referenced from this page and the CSS and HTML can be adjusted as required.</p>
+	<h2>The carousel must:</h2>
+	<ul>
+		<li>be able to support up to 5 items</li>
+		<li>include an indication of the number of items</li>
+		<li>clearly disable the 'next' or 'previous' buttons when relevant</li>
+		<li>be simple to re-use - once built please show 2 independent carousels on one page</li>
+		<li>function correctly in the latest Chrome and Firefox browsers</li>
+		<li>be a lightweight solution - not bloated with unnecessary functional options</li>
+	</ul>
+	<h2>The carousel does not have to:</h2>
+	<ul>
+		<li>continuously loop</li>
+		<li>support flexible widths - a fixed width solution is expected</li>
+		<li>support touch interactions</li>
+	</ul>
+	<p>The aim of this task is to illustrate your ability to write JavaScript code using an object oriented approach.</p>
+</section>
+
+<section id="carousel">
+<a href="#" id="mycarousel-prev" class="prev">Previous</a>
+<div class="carouselWrap">
+  <h1>jCarousel -1</h1>
+
+  <div id="mycarousel" class="carouselWrap">
+    <div class="jcarousel-control">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+	    <a href="#">4</a>
+      <a href="#">5</a>
+
+    </div>
+    <div class="jcarousel-scroll"> 
+ 			
+        <select>
+          <option value="1">Scroll 1 item per click</option>
+          <option value="2">Scroll 2 items per click</option>
+		      <option value="3">Scroll 3 items per click</option>
+		      <option value="4">Scroll 4 items per click</option>
+
+        </select>
+		
+    </div> 
+
+    <ul>
+ 			<li>
+				<h2>Feature 1</h2>
+				<img src="http://lorempixel.com/400/200/technics" alt="placeholder" />
+				<p>Tenderloin jowl biltong capicola strip steak sirloin kielbasa pancetta spare ribs. Brisket leberkas chicken, pork chop salami frankfurter ham kielbasa ground round short ribs pig. Pork belly strip steak hamburger ham pork shoulder flank leberkas fatback sausage tongue jerky pork loin. Rump sirloin filet mignon, turkey turducken chuck.</p>
+			</li>
+			<li>
+				<h2>Feature 2</h2>
+				<img src="http://lorempixel.com/400/200/nature" alt="placeholder" />
+				<p>Leberkas cow shankle, pancetta filet mignon sirloin hamburger andouille shank kielbasa jowl corned beef bresaola meatball jerky. Short ribs tri-tip jerky sausage, hamburger t-bone turducken ball tip. Meatball pork prosciutto turducken.</p>
+			</li>
+			<li>
+				<h2>Feature 3</h2>
+				<img src="http://lorempixel.com/400/200/city" alt="placeholder" />
+				<p>Flank venison frankfurter ham hock jowl, chuck pancetta kielbasa bresaola cow. Kielbasa salami t-bone biltong bresaola pork chop tail, spare ribs shankle ground round drumstick doner andouille pork loin. Capicola pancetta ground round jerky.</p>
+			</li>
+			<li>
+				<h2>Feature 4</h2>
+				<img src="http://lorempixel.com/400/200/nature" alt="placeholder" />
+				<p> Manoj Test -4  </p>
+				</li>
+			<li>
+				<h2>Feature -5</h2>
+				<img src="http://lorempixel.com/400/200/technics" alt="placeholder" />
+				<p> Manoj Test -5 </p>
+				</li>
+			</li>
+	
+    </ul>
+  
+  </div>
+</div>
+<a href="#" id="mycarousel-next" class="next">Next</a>
+</section>
+
+
+<!--*********************************************************-->
+<section id="carousel1">
+<a href="#" id="mycarousel1-prev" class="prev">Previous</a>
+<div class="carouselWrap">
+  <h1>jCarousel -2</h1>
+
+  <div id="mycarousel1" class="carouselWrap">
+    <div class="jcarousel-control">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+	    <a href="#">4</a>
+      <a href="#">5</a>
+
+    </div>
+    <div class="jcarousel-scroll"> 
+ 			
+        <select>
+          <option value="1">Scroll 1 item per click</option>
+          <option value="2">Scroll 2 items per click</option>
+		      <option value="3">Scroll 3 items per click</option>
+		      <option value="3">Scroll 4 items per click</option>
+
+        </select>
+		
+    </div> 
+
+    <ul>
+ 			<li>
+				<h2>Feature 1</h2>
+				<img src="http://lorempixel.com/400/200/technics" alt="placeholder" />
+				<p>Tenderloin jowl biltong capicola strip steak sirloin kielbasa pancetta spare ribs. Brisket leberkas chicken, pork chop salami frankfurter ham kielbasa ground round short ribs pig. Pork belly strip steak hamburger ham pork shoulder flank leberkas fatback sausage tongue jerky pork loin. Rump sirloin filet mignon, turkey turducken chuck.</p>
+			</li>
+			<li>
+				<h2>Feature 2</h2>
+				<img src="http://lorempixel.com/400/200/nature" alt="placeholder" />
+				<p>Leberkas cow shankle, pancetta filet mignon sirloin hamburger andouille shank kielbasa jowl corned beef bresaola meatball jerky. Short ribs tri-tip jerky sausage, hamburger t-bone turducken ball tip. Meatball pork prosciutto turducken.</p>
+			</li>
+			<li>
+				<h2>Feature 3</h2>
+				<img src="http://lorempixel.com/400/200/city" alt="placeholder" />
+				<p>Flank venison frankfurter ham hock jowl, chuck pancetta kielbasa bresaola cow. Kielbasa salami t-bone biltong bresaola pork chop tail, spare ribs shankle ground round drumstick doner andouille pork loin. Capicola pancetta ground round jerky.</p>
+			</li>
+			<li>
+				<h2>Feature 4</h2>
+				<img src="http://lorempixel.com/400/200/nature" alt="placeholder" />
+				<p> Manoj Test -4  </p>
+				</li>
+			<li>
+				<h2>Feature -5</h2>
+				<img src="http://lorempixel.com/400/200/technics" alt="placeholder" />
+				<p> Manoj Test -5 </p>
+				</li>
+			</li>
+	
+    </ul>
+  
+  </div>
+</div>
+<a href="#" id="mycarousel1-next" class="next">Next</a>
+</section>
+
+</body>
+</html>
